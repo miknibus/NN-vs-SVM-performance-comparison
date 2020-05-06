@@ -11,10 +11,8 @@
 - APPROACH
   1. Neural Networks  
     Keras Sequential models will be used. First layer will consist of a Flatten which expands the 2D pixel data of 28x28 into a 1D 784 neural nodes. 2-3 number of Dense layers will be used with varying activation methods ranging from 'relu64', 'relu128', 'selu64', 'selu128', 'tanh64', 'tanh128', 'sigmoid64', 'sigmoid128', 'elu64', 'elu128', 'linear64', 'linear128'. The number behind the activation method indicate the nodes: 64 indicates 2 dense layers, 128 indicate a single dense layer with respective number of nodes.
-  2. Support Vector Machines
-    Non linear hyperplane kernel 'rbf' will be constantly used. Parameters: gamma and C will be the control variables which will be determining the optimal combination of values. 
-     - TREATMENT    
-        10 fold cross validation will be applied to all loop iterations of different SVM parameter combinations. This process takes the average of each chosen 'validation fold' with the remaining 9 training folds for a total of 10 times each loop to take the mean of the accuracy of prediction.
+  2. Support Vector Machines  
+    Non linear hyperplane kernel 'rbf' will be constantly used. Parameters: gamma and C will be the control variables which will be determining the optimal combination of values. 10 fold cross validation will be applied to all loop iterations of different SVM parameter combinations. This process takes the average of each chosen 'validation fold' with the remaining 9 training folds for a total of 10 times each loop to take the mean of the accuracy of prediction.
 ### Results
 - NN  
     ```
