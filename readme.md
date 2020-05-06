@@ -7,7 +7,7 @@
   It has been divided into S_out 10000 datapoints and S_in 60000 datapoints which is also subsequently divided into S_val 10000 and S_train 50000.  
 `(60000, 784) (10000, 784) (50000, 784) (10000, 784)`  
 - GOAL  
-  The goal of the project is to train the S_train datapoints using 12 iterations of permutations of NN layers and ~~undefined~~ iterations of permutations of SVM parameters to compare their out of sample error of S_out.
+  The goal of the project is to train the S_train datapoints using 12 iterations of permutations of NN layers and 9 iterations of permutations of SVM parameters to compare their out of sample error of S_out.
 - APPROACH
   1. Neural Networks  
     Keras Sequential models will be used. First layer will consist of a Flatten which expands the 2D pixel data of 28x28 into a 1D 784 neural nodes. 2-3 number of Dense layers will be used with varying activation methods ranging from 'relu64', 'relu128', 'selu64', 'selu128', 'tanh64', 'tanh128', 'sigmoid64', 'sigmoid128', 'elu64', 'elu128', 'linear64', 'linear128'. The number behind the activation method indicate the nodes: 64 indicates 2 dense layers, 128 indicate a single dense layer with respective number of nodes.
@@ -90,5 +90,5 @@
   - So I had to look for a better optimized reference code. This is when I found about the two references of NN and SVM. Thankfully in the SVM reference, it taught me about the GridsearchCV which literally was a packaged version the manual aspect of the code design. It had the built in loop design and appropriately organized the necessary information in accessible attributes and was easily pushed out into a dataframe which could then be exported as csvs and plots.
 # Conclusion
   - NN activation models matter very little, but the number of layers and nodes in each layer is what determines the efficacy of the model. 
-  - SVM parameters C and gamma have a reciprocal relationship in the efficacy of accuracy. This relationship is not indefinite since there is a sweet spot of gamma = ~0.01 and C = 15~ where the model does not overfit the training data exclusively and there are no bias or variance in the accuracy. This is because at those hyperparameters, the mean_test_score showed to be 0.97976 when the mean_train_score of 0.9982.
+  - SVM parameters C and gamma have a reciprocal relationship in the efficacy of accuracy. This relationship is not indefinite since there is a sweet spot of gamma < 0.01 and C > 15 where the model does not overfit the training data exclusively and there are no bias or variance in the accuracy. This is because at those hyperparameters, the mean_test_score showed to be 0.97976 when the mean_train_score of 0.9982.
   - Optimally, another run should be conducted with the hyperparameters {gamma:[0.5, 0.6, 0.7, 0.8, 0.9], C:[16, 17, 18, 19, 20]} to find a better spot based on the extrapolated expectations of gammaOpt < 0.01 & COpt > 15, but I do not have time for another 20 hour iteration before submitting this project.
