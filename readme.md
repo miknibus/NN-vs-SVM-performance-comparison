@@ -1,4 +1,4 @@
-# 
+# Work In Progress
 # Unguided, simply permutational performance comparison between NNs and SVMs
 ## Biola CSCI480 Machine Learning Professor Buzi
 ## Subin Kim, April 29th 2020
